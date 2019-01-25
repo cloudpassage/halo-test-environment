@@ -26,6 +26,7 @@ These environment variables are required for operation:
 | HALO_AGENT_KEY        | Halo agent registration key.                       |
 | ENVIRONMENT_NAME      | Name of environment. Must be unique.               |
 | HALO_GROUP_TAG        | Halo group provisioning tag. Defaults to `test`.   |
+| HALO_SERVER_LABEL     | Optional, defaults to `Halo Test`                  |
 | SERVER_COUNT          | How many instances? Optional. Default 1, Max 10.   |
 
 
@@ -48,9 +49,10 @@ docker build -t halo-test-environment .
     -e "HALO_AGENT_KEY=${HALO_AGENT_KEY}" \
     -e "ENVIRONMENT_NAME=${ENVIRONMENT_NAME}" \
     -e "HALO_GROUP_TAG=${HALO_GROUP_TAG}" \
+    -e "HALO_SERVER_LABEL=${HALO_SERVER_LABEL}" \
     -e "SERVER_COUNT=${SERVER_COUNT}" \
     halo-test-environment \
-    build
+    provision
 ```
 
 A non-zero exit indicates that instance instantiation failed.

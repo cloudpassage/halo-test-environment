@@ -23,6 +23,7 @@ class CloudFormation(object):
         config["ssh_key_name"] = self.config.ssh_key_name
         config["halo_agent_key"] = self.config.halo_agent_key
         config["halo_group_tag"] = self.config.halo_group_tag
+        config["halo_server_label"] = self.config.halo_server_label
         config["ami_id"] = self.config.ami_id
         config["server_count"] = self.config.server_count
         template = CloudFormation.load_template_file(self.provision_template)
@@ -59,6 +60,8 @@ class CloudFormation(object):
                  'ParameterValue': str(config["halo_group_tag"])},
                 {'ParameterKey': 'ServerAMI',
                  'ParameterValue': str(config["ami_id"])},
+                {'ParameterKey': 'HaloServerLabel',
+                 'ParameterValue': str(config["halo_server_label"])},
                 {'ParameterKey': 'ServerCount',
                  'ParameterValue': str(config["server_count"])}, ]
         session = CloudFormation.create_session(config["aws_key"],

@@ -18,6 +18,8 @@ class ConfigManager(object):
 
     optional_provision = [("cli_cmd", "CLI_CMD", ""),
                           ("halo_group_tag", "HALO_GROUP_TAG", "test"),
+                          ("halo_server_label", "HALO_SERVER_LABEL",
+                           "HaloTest"),
                           ("server_count", "SERVER_COUNT", "1")]
 
     required_deprovision = [("aws_key", "AWS_ACCESS_KEY_ID"),

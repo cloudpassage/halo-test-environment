@@ -3,4 +3,4 @@ from cloudformation import CloudFormation  # NOQA
 from utility import Utility  # NOQA
 
 
-__version__ = "0.1"
+__version__ = "0.2"
