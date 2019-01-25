@@ -31,6 +31,11 @@
       ],
       "ConstraintDescription": "must be a valid EC2 instance type."
     },
+    "HaloServerLabel": {
+      "Description": "Server label to be used when registering with Halo.",
+      "Type": "String",
+      "Default": "Halo Test"
+    },
     "CLICommand": {
       "Description": "Base-64 encoded command to be run on boot.",
       "Type": "String",
@@ -416,6 +421,11 @@
                       {
                         "Ref": "HaloServerTag"
                       },
+                      " --server-label=\"",
+                      {
+                        "Ref": "HaloServerLabel"
+                      },
+                      "\"",
                       "\n",
                       "/etc/init.d/cphalod start"
                     ]

@@ -40,7 +40,7 @@ def provision(dyn_config):
     except Exception as e:
         msg_str = str("Error in CloudFormation provisioning process!!!\n" +
                       "Troubleshoot, deprovision, and try again!\n" +
-                      str(e))
+                      str(type(e)) + str(e))
         msg.print_error_message(msg_str)
         sys.exit(2)
 
