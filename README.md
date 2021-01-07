@@ -68,3 +68,8 @@ A non-zero exit indicates that instance instantiation failed.
     halo-test-environment \
     deprovision
 ```
+
+<!---
+#CPTAGS:community-supported integration automation
+#TBICON:images/python_icon.png
+-->
